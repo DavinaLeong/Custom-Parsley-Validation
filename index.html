@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="Davina Leong">
+        <meta name="keywords" content="web,design,html,css,html5,development,bootstrap,parsleyjs,jquery,npm,gulp">
+
+        <meta name="copyright" content="Custom Parsley Validators">
+        <link rel="icon" href="favicon.png" type="image/png">
+
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+
+        <title>Custom Parsley Validators</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="display-1">Custom Parsley Validators</h1>
+
+            <h2>Test Form</h2>
+            <form id="form-test" method="post">
+                <div class="form-group">
+                    <label class="control-label" for="divisibleByThree">Divisible by Three</label>
+                    <input class="form-control" type="number" step="1" min="0" max="10000" id="divisibleByThree" name="divisibleByThree">
+                </div>
+
+                <button id="btn-submit" type="submit" class="btn btn-primary mt-1">Submit <i class="fas fa-check fa-fw"></i></button>
+            </form>
+        </div>
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/popper.js/umd/popper.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendor/parsleyjs/parsley.min.js"></script>
+    </body>
+</html>
