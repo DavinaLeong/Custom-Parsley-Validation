@@ -91,8 +91,9 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 */
 define('STATIC_REPO',               'http://localhost/custom-parsley-validation/static_repo/');
 
-define('DATETIME_ZONE',             'Asia/Singapore');
+define('SYSTEM_DATETIME_ZONE',      'Asia/Singapore');
 define('MYSQL_DATETIME_FORMAT',     'Y-m-d H:i:s');
 
-define('DATE_FORMAT',               'd M Y');
-define('DATETIME_FORMAT',           'd M Y, H:i:s');
+define('SYSTEM_DATETIME_FORMAT',    'd M Y, H:i:s');
+define('SYSTEM_DATE_FORMAT',        'd M Y');
+define('SYSTEM_TIME_FORMAT',        'H:i:s');
