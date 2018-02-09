@@ -38,6 +38,12 @@
                         id="multipleOfThree" name="multipleOfThree" data-parsley-multiple-of="3" required>
                 </div>
 
+                <div class="form-group">
+                    <label class="control-label" for="invalidNameBob">Valid Names</label>
+                    <input class="form-control" type="text"
+                        id="invalidNameBob" name="invalidNameBob" data-parsley-invalid-name="Bob" required>
+                </div>
+
                 <button id="btn-submit" type="submit" class="btn btn-primary mt-1">Submit <i class="fas fa-check fa-fw"></i></button>
             </form>
 
@@ -53,7 +59,26 @@
             <?php endif; ?>
         </div>
         <?php $this->load->view('_snippets/body_resources'); ?>
+        <script>
+        window.Parsley.addValidator('multipleOf', {
+            requirementType: 'integer',
+            validateNumber: function(value, requirement) {
+                return 0 === value % requirement;
+            },
+            messages: {
+                en: 'This value must be a multiple of %s.'
+            }
+        });
 
-        
+        window.Parsley.addValidator('invalidName', {
+            requirementType: 'string',
+            validateString: function(value, requirement) {
+                return value.toLowerCase() !== requirement.toLowerCase();
+            },
+            messages: {
+                en: 'This value cannot be %s.'
+            }
+        });
+        </script>
     </body>
 </html>
