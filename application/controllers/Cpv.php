@@ -13,11 +13,11 @@ class Cpv extends CI_Controller {
         $this->load->view('cpv_dump/index_page');
     }
 
-    public function dump($dump_id) {
+    public function dump() {
 
     }
 
-    public function all_dump() {
+    public function dump_all() {
 
     }
 

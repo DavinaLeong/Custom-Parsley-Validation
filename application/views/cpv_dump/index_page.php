@@ -10,6 +10,18 @@
             <h1 class="display-1">Custom Parsley Validators</h1>
             <p class="lead">External links: <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> | <a href="https://fontawesome.com/" target="_blank">Font Awesome</a> | <a href="http://parsleyjs.org/" target="_blank">Parsley</a></p>
 
+            <ul class="nav nav-tabs mb-3">
+                <li class="nav-item">
+                    <a class="nav-link active" href="<?=site_url('cpv');?>">Form</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?=site_url('cpv/dump');?>">Latest Dump</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?=site_url('cpv/dump_all');?>">All Dumps</a>
+                </li>
+            </ul>
+
             <h2>Test Form</h2>
             <form id="form-test" method="post" action="formSubmit" data-parsley-validate>
                 <div class="form-group">
