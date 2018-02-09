@@ -23,7 +23,15 @@
             </ul>
 
             <h2>Test Form</h2>
-            <form id="form-test" method="post" action="formSubmit" data-parsley-validate>
+            <?php if(validation_errors()): ?>
+            <div class="alert alert-danger" role="alert">
+                <ul><?php validation_errors('<li>', '</li>'); ?></ul>
+            </div>
+            <?php endif; ?>
+
+            <form id="form-test" method="post" data-parsley-validate>
+                <input type="hidden" id="form_submit" value="submitted">
+
                 <div class="form-group">
                     <label class="control-label" for="multipleOfThree">Multiple of 3</label>
                     <input class="form-control" type="number" step="1" min="0" max="10000" placeholder="0"
@@ -32,7 +40,20 @@
 
                 <button id="btn-submit" type="submit" class="btn btn-primary mt-1">Submit <i class="fas fa-check fa-fw"></i></button>
             </form>
+
+            <?php if($this->input->post()): ?>
+            <div class="card border-secondary">
+                <div class="card-header">
+                    <h5>POST Dump</h5>
+                </div>
+                <div class="card-body">
+                    <?php var_export($this->input->post()); ?>
+                </div>
+            </div>
+            <?php endif; ?>
         </div>
         <?php $this->load->view('_snippets/body_resources'); ?>
+
+        
     </body>
 </html>

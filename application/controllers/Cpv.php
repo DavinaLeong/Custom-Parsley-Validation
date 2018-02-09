@@ -10,6 +10,14 @@ class Cpv extends CI_Controller {
     }
 
     public function index() {
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_rules('form_submit', 'form_submit', 'trim|required|in_list[submitted]');
+
+        if($this->form_validation->run()) {
+            //do something
+        }
+
         $this->load->view('cpv_dump/index_page');
     }
 
