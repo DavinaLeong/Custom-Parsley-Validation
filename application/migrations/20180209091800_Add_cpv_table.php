@@ -19,10 +19,11 @@ class Migration_Add_cpv_table extends CI_Migration {
             ],
             'field_value' => [
                 'type' => 'TEXT',
+                'unsigned' => TRUE,
                 'null' => TRUE
             ],
-            'dump_timestamp' => [
-                'type' => 'TIMESTAMP',
+            'dump_no' => [
+                'type' => 'INT',
                 'null' => TRUE
             ],
             'timestamp' => [

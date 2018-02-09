@@ -18,6 +18,17 @@ class Migrate extends CI_Controller {
         }
     }
 
+    public function reset() {
+        $downgrade_status = $this->migration->version(0);
+        $upgrade_status = $this->migration->current();
+        if ($downgrade_status === FALSE && $upgrade_status === FALSE) {
+            $this->failed_html($this->migration->error_string());
+        } else {
+            $body_content = '<p>Migraion version: ' . $this->Migrations_model->get_version() . '</p>';
+            $this->success_html($body_content);
+        }
+    }
+
     public function latest() {
         if ($this->migration->latest() === FALSE) {
             $this->failed_html($this->migration->error_string());
