@@ -7,7 +7,7 @@ class Migrations_model extends CI_Model {
 
     public function get_version() {
         $query = $this->db->get($this::TABLE_NAME);
-        return $query->row_array['version'];
+        return $query->row_array()['version'];
     }
 
 } //end Migrations_model clas

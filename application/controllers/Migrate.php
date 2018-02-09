@@ -97,7 +97,7 @@ class Migrate extends CI_Controller {
         echo '</html>';
     }
 
-    private function success_html($migration_version) {
+    private function success_html($body_content) {
         echo '<!DOCTYPE html>' . $this->whitespace_char()['newline'];
         echo '<html lang="en">' . $this->whitespace_char()['newline'];
         echo '<head>' . $this->whitespace_char()['newline'];
