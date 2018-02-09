@@ -40,7 +40,10 @@ class Cpv extends CI_Controller {
     }
 
     public function dump_all() {
-
+        $data = [
+            'cpv_dumps' => $this->Cpv_dump_model->get_all()
+        ];
+        $this->load->view('cpv_dump/dump_all_page', $data);
     }
 
 } //end Cpv controller class
