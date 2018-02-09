@@ -89,6 +89,8 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 | Custom Constants
 |--------------------------------------------------------------------------
 */
+define('PROJECT_NAME',              'CPV');
+define('PROJECT_TITLE',             'Custom Parsley Validation');
 define('STATIC_REPO',               'http://localhost/custom-parsley-validation/static_repo/');
 
 define('SYSTEM_DATETIME_ZONE',      'Asia/Singapore');
