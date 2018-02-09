@@ -29,6 +29,11 @@ class Cpv_dump_model extends CI_Model {
         }
     }
 
+    public function get_latest_dump() {
+        $all_dumps = $this->get_all('timestamp', 'DESC');
+        return $all_dumps[0];
+    }
+
     public function insert($cpv_dump=FALSE) {
         if($cpv_dump && is_array($cpv_dump)) {
 

@@ -16,7 +16,7 @@ class Cpv extends CI_Controller {
 
         if($this->form_validation->run()) {
             $this->Cpv_dump_model->insert($this->_prepare_dump());
-            redirect('cpv/dump_all');
+            redirect('cpv/latest_dump');
         }
 
         $this->load->view('cpv_dump/index_page');
@@ -35,15 +35,18 @@ class Cpv extends CI_Controller {
         return $cpv_dump;
     }
 
-    public function dump() {
-
+    public function latest_dump() {
+        $data = [
+            'dump' => $this->Cpv_dump_model->get_latest_dump()
+        ];
+        $this->load->view('cpv_dump/latest_dump_page', $data);
     }
 
-    public function dump_all() {
+    public function all_dumps() {
         $data = [
             'cpv_dumps' => $this->Cpv_dump_model->get_all()
         ];
-        $this->load->view('cpv_dump/dump_all_page', $data);
+        $this->load->view('cpv_dump/all_dumps_page', $data);
     }
 
 } //end Cpv controller class

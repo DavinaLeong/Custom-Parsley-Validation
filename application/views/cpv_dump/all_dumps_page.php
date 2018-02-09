@@ -17,20 +17,19 @@
                     <a class="nav-link" href="<?=site_url('cpv');?>">Form</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?=site_url('cpv/dump');?>">Latest Dump</a>
+                    <a class="nav-link" href="<?=site_url('cpv/latest_dump');?>">Latest Dump</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="<?=site_url('cpv/dump_all');?>">All Dumps</a>
+                    <a class="nav-link active" href="<?=site_url('cpv/all_dumps');?>">All Dumps</a>
                 </li>
             </ul>
 
             <h2 class="mb-3">All Dumps</h2>
             <div class="card-columns">
-            <?php foreach($cpv_dumps as $dump): ?>
-                <div id="cpv_dump_<?=$dump['cpv_dump_id'];?>" class="card">
-                    <div class="card-header">
-                        <h5><?=$this->datetime_formatter->format_system_datetime($dump['timestamp']);?></h5>
-                    </div>
+            <?php foreach($cpv_dumps as $key=>$dump):
+                $highlight = $key == 0 ? ' border-primary' : ''; ?>
+                <div id="cpv_dump_<?=$dump['cpv_dump_id'];?>" class="card<?=$highlight;?>">
+                    <div class="card-header"><?=$this->datetime_formatter->format_system_datetime($dump['timestamp']);?></div>
                     <div class="card-body">
                         <p><strong><?=$dump['form_name'];?></strong></p>
                         <p><?=nl2br($dump['form_dump']);?></p>

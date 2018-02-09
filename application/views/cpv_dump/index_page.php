@@ -14,10 +14,10 @@
                     <a class="nav-link active" href="<?=site_url('cpv');?>">Form</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?=site_url('cpv/dump');?>">Latest Dump</a>
+                    <a class="nav-link" href="<?=site_url('cpv/latest_dump');?>">Latest Dump</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?=site_url('cpv/dump_all');?>">All Dumps</a>
+                    <a class="nav-link" href="<?=site_url('cpv/all_dumps');?>">All Dumps</a>
                 </li>
             </ul>
 
