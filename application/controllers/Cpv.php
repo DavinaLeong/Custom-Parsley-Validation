@@ -15,10 +15,24 @@ class Cpv extends CI_Controller {
         $this->form_validation->set_rules('form_submit', 'form_submit', 'trim|required|in_list[submitted]');
 
         if($this->form_validation->run()) {
-            //do something
+            $this->Cpv_dump_model->insert($this->_prepare_dump());
+            redirect('cpv/dump_all');
         }
 
         $this->load->view('cpv_dump/index_page');
+    }
+
+    private function _prepare_dump() {
+        $form_dump = '';
+        foreach($this->input->post() as $field=>$value) {
+            $form_dump .= "$field => $value\n";
+        }
+
+        $cpv_dump = [
+            'form_name' => 'Test Form',
+            'form_dump' => $form_dump
+        ];
+        return $cpv_dump;
     }
 
     public function dump() {

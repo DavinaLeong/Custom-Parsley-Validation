@@ -25,30 +25,30 @@
             <h2>Test Form</h2>
             <?php if(validation_errors()): ?>
             <div class="alert alert-danger" role="alert">
-                <ul><?php validation_errors('<li>', '</li>'); ?></ul>
+                <ul><?= validation_errors('<li>', '</li>'); ?></ul>
             </div>
             <?php endif; ?>
 
             <form id="form-test" method="post" data-parsley-validate>
-                <input type="hidden" id="form_submit" value="submitted">
+                <input type="hidden" id="form_submit" name="form_submit" value="submitted">
 
                 <div class="form-group">
-                    <label class="control-label" for="multipleOfThree">Multiple of 3</label>
+                    <label class="control-label" for="multiple_of_3">Multiple of 3</label>
                     <input class="form-control" type="number" step="1" min="0" max="10000" placeholder="0"
-                        id="multipleOfThree" name="multipleOfThree" data-parsley-multiple-of="3" required>
+                        id="multiple_of_3" name="multiple_of_3" data-parsley-multiple-of="3" required>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label" for="invalidNameBob">Valid Names</label>
+                    <label class="control-label" for="invalid_name_bob">Valid Names</label>
                     <input class="form-control" type="text"
-                        id="invalidNameBob" name="invalidNameBob" data-parsley-invalid-name="Bob" required>
+                        id="invalid_name_bob" name="invalid_name_bob" data-parsley-invalid-name="Bob" required>
                 </div>
 
                 <button id="btn-submit" type="submit" class="btn btn-primary mt-1">Submit <i class="fas fa-check fa-fw"></i></button>
             </form>
 
             <?php if($this->input->post()): ?>
-            <div class="card border-secondary">
+            <div class="card border-secondary mt-3">
                 <div class="card-header">
                     <h5>POST Dump</h5>
                 </div>

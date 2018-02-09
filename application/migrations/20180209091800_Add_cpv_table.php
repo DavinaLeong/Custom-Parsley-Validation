@@ -8,22 +8,17 @@ class Migration_Add_cpv_table extends CI_Migration {
         $this->dbforge->add_field([
             'cpv_dump_id' => [
                 'type' => 'INT',
-                'constaint' => 5,
+                'constraint' => 5,
                 'unsigned' => TRUE,
                 'auto_increment' => TRUE,
             ],
-            'form_field' => [
+            'form_name' => [
                 'type' => 'VARCHAR',
-                'constraint' => '128',
+                'constraint' => 128,
                 'null' => TRUE
             ],
-            'field_value' => [
+            'form_dump' => [
                 'type' => 'TEXT',
-                'unsigned' => TRUE,
-                'null' => TRUE
-            ],
-            'dump_no' => [
-                'type' => 'INT',
                 'null' => TRUE
             ],
             'timestamp' => [
